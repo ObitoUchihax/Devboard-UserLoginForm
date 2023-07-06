@@ -21,6 +21,31 @@ body {
     height: 420px;
     background: #1c1c1c;
     border-radius: 8px;
+    overflow: hidden;
+}
+
+.box::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 380px;
+    height: 420px;
+    background: linear-gradient(0deg, transparent, transparent, #120896, #120896, #120896);
+    z-index: 1;
+    transform-origin: bottom right;
+    animation: animate 7s linear infinite;
+}
+
+@keyframes animate {
+    0%
+    {
+        transform: rotate(0deg);
+    }
+    100%
+    {
+        transform: rotate(360deg);
+    }
 }
 
 .box form {
@@ -130,4 +155,8 @@ body {
     font-size: 0.9em;
     background-color: #fff;
     cursor: pointer;
+}
+
+.submitbtn:active {
+    opacity: 0.8;
 }
